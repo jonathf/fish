@@ -5,8 +5,8 @@ function cd --description "Change directory"
     set -l MAX_DIR_HIST 25
 
     # make nvim aware of cd
-    if test "$NVIM_LISTEN_ADDRESS" != ""
-        ~/cfg/bin/nvim-terminal-cd $argv
+    if test -n "$NVIM_LISTEN_ADDRESS"
+        nvim-terminal-cd $argv
     end
 
     if test (count $argv) -gt 1
