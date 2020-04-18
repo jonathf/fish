@@ -7,8 +7,8 @@ function _pure_prompt_symbol \
         set prompt_symbol '%'
     end
 
-    set --local symbol_color_success (_pure_set_color brgreen)
-    set --local symbol_color_error (_pure_set_color red)
+    set --local symbol_color_success (set_color brgreen)
+    set --local symbol_color_error (set_color red)
     set --local command_succeed 0
 
     set --local symbol_color $symbol_color_success # default pure symbol color

@@ -7,15 +7,15 @@ function _pure_prompt_git \
     end
 
     # current git branch
-    set --local git_branch (_pure_set_color brblack)(command git symbolic-ref --short HEAD 2>/dev/null;
+    set --local git_branch (set_color brblack)(command git symbolic-ref --short HEAD 2>/dev/null;
         or command git name-rev --name-only HEAD 2>/dev/null)
 
     # The first checks for staged changes, the second for unstaged ones.
     # We put them in this order because checking staged changes is *fast*.
     set --local git_dirty
     if not command git diff-index --ignore-submodules --cached --quiet HEAD -- >/dev/null 2>&1
-        or not command git diff --ignore-submodules --no-ext-diff --quiet --exit-code >/dev/null 2>&1
-        set git_dirty (_pure_set_color brblack)'*'
+            or not command git diff --ignore-submodules --no-ext-diff --quiet --exit-code >/dev/null 2>&1
+        set git_dirty (set_color brblack)'*'
     end
 
     set --local git_unpushed
@@ -28,12 +28,12 @@ function _pure_prompt_git \
 
         # upstream is behind local repo
         if test $git_status[1] -gt 0
-            set git_unpushed (_pure_set_color cyan)'+'$git_status[1]
+            set git_unpushed (set_color cyan)'+'$git_status[1]
         end
 
         # upstream is ahead of local repo
         if test $git_status[2] -gt 0
-            set git_unpulled (_pure_set_color cyan)'-'$git_status[2]
+            set git_unpulled (set_color cyan)'-'$git_status[2]
         end
     end
 
