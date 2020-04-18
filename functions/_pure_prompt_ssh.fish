@@ -1,5 +1,7 @@
 function _pure_prompt_ssh
-    if test "$SSH_CONNECTION" != ""
-        echo (_pure_prompt_ssh_user)(_pure_prompt_ssh_separator)(_pure_prompt_ssh_host)
+    if test "$SSH_CONNECTION" = ""
+        return
     end
+    set --query --global hostname or set --local hostname (hostname -s) # current host name compatible busybox
+    echo (set_color brblack)(whoami)'@'$hostname
 end
