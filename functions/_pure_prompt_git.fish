@@ -37,5 +37,5 @@ function _pure_prompt_git \
         end
     end
 
-    echo "$git_branch$git_dirty $git_unpushed$git_unpulled"
+    echo "$git_branch$git_dirty" "$git_unpushed$git_unpulled"
 end

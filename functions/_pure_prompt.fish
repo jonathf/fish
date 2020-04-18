@@ -4,7 +4,16 @@ function _pure_prompt \
 
     set --local jobs (_pure_prompt_jobs)
     set --local virtualenv (_pure_prompt_virtualenv) # Python virtualenv name
-    set --local pure_symbol (_pure_prompt_symbol $exit_code)
 
-    echo (_pure_print_prompt $jobs $virtualenv $pure_symbol)
+    set --local symbol '$'
+    if test "$fish_bind_mode" != "insert"
+        set symbol '%'
+    end
+    if test $exit_code -ne 0
+        set symbol (set_color red)$symbol
+    else
+        set symbol (set_color brgreen)$symbol
+    end
+
+    echo (_pure_print_prompt $jobs $virtualenv $symbol)
 end
