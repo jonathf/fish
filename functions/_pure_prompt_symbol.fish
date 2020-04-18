@@ -8,7 +8,7 @@ function _pure_prompt_symbol \
     end
 
     set --local symbol_color_success (_pure_set_color brgreen)
-    set --local symbol_color_error (_pure_set_color $pure_color_prompt_on_error)
+    set --local symbol_color_error (_pure_set_color red)
     set --local command_succeed 0
 
     set --local symbol_color $symbol_color_success # default pure symbol color
