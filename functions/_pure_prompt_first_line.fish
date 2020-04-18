@@ -17,19 +17,11 @@ function _pure_prompt_first_line \
     set --local current_folder (_pure_prompt_current_folder $prompt_width)
 
     set --local prompt_components
-    if test $pure_begin_prompt_with_current_directory = true
-        set prompt_components \
-                $current_folder \
-                $prompt_git \
-                $prompt_ssh \
-                $prompt_command_duration
-    else
-        set prompt_components \
-                $prompt_ssh \
-                $current_folder \
-                $prompt_git \
-                $prompt_command_duration
-    end
+    set prompt_components \
+            $prompt_ssh \
+            $current_folder \
+            $prompt_git \
+            $prompt_command_duration
 
     echo (_pure_print_prompt $prompt_components)
 end

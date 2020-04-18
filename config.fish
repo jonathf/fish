@@ -28,16 +28,3 @@ if test -n "$direnv_path"
         pyenv init - | source
     end
 end
-
-set --universal pure_symbol_prompt \$
-set --universal pure_symbol_reverse_prompt %
-set --universal pure_symbol_git_unpulled_commits -
-set --universal pure_symbol_git_unpushed_commits +
-set --universal pure_symbol_git_dirty \*
-set --universal pure_symbol_title_bar_separator —
-set --universal pure_reverse_prompt_symbol_in_vimode true
-set --universal pure_begin_prompt_with_current_directory false
-set --universal pure_separate_prompt_on_error false
-
-set --universal pure_color_primary bryellow
-set --universal pure_color_success brgreen

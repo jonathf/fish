@@ -3,7 +3,7 @@ set fail 1
 function _pure_format_time \
     --description="Format milliseconds to a human readable format" \
     --argument-names milliseconds threshold
-    
+
     if test $milliseconds -lt 0; return $fail; end
 
     set --local seconds (math -s0 "$milliseconds / 1000 % 60")
