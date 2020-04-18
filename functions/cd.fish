@@ -6,7 +6,11 @@ function cd --description "Change directory"
 
     # make nvim aware of cd
     if test -n "$NVIM_LISTEN_ADDRESS"
-        nvim-terminal-cd $argv
+        $FISH_ROOT/venv/bin/python -c "
+import neovim
+with neovim.attach('socket', path='$NVIM_LISTEN_ADDRESS') as session:
+    session.vars['__autocd_cwd'] = '$argv'
+    session.command('execute \"lcd \" . fnameescape(g:__autocd_cwd)')"
     end
 
     if test (count $argv) -gt 1
