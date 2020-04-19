@@ -4,6 +4,10 @@ set --export BROWSER firefox
 set --export EDITOR nvim
 set --export VISUAL nvim
 
+# Where are we? Used in some of the scripts.
+set --universal FISH_ROOT (dirname (readlink -f (status -f))
+)
+
 # If a local.fish file exist in your fish folder, source it.
 # For storing local system stuff and secrets.
 if test -f $FISH_ROOT/local.fish
@@ -14,17 +18,18 @@ if test -f ~/.matplotlibrc
     set --universal MATPLOTLIBRC ~/.matplotlibrc
 end
 
-set --universal PIPENV_VENV_IN_PROJECT true
-set --universal PIPENV_DEFAULT_PYTHON_VERSION 3.7
-set --universal PIPENV_IGNORE_VIRTUALENVS 1
-
 set --export DIRENV_LOG_FORMAT
 
-set --export CARGO_ROOT "$HOME/.cargo"
-set --export --append PATH "$CARGO_ROOT/bin"
+if test -d $HOME/.cargo
+    set --export CARGO_ROOT "$HOME/.cargo"
+    set --export --append PATH "$CARGO_ROOT/bin"
+end
 
-set --export PYENV_ROOT "$HOME/.pyenv"
-set --export --append PATH "$PYENV_ROOT/bin"
+if test -d $HOME/.pyenv
+    set --export PYENV_ROOT "$HOME/.pyenv"
+    set --export --append PATH "$PYENV_ROOT/bin"
+end
+
 set direnv_path (command -v direnv)
 if test -n "$direnv_path"
     eval (direnv hook fish)
@@ -35,3 +40,7 @@ end
 
 # Deactivate the default virtualenv prompt so that we can add our own
 set --global --export VIRTUAL_ENV_DISABLE_PROMPT 1
+
+set --universal PIPENV_VENV_IN_PROJECT true
+set --universal PIPENV_DEFAULT_PYTHON_VERSION 3.7
+set --universal PIPENV_IGNORE_VIRTUALENVS 1
