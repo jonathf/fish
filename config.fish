@@ -10,6 +10,10 @@ if test -f $FISH_ROOT/local.fish
     source $FISH_ROOT/local.fish
 end
 
+if test -f ~/.matplotlibrc
+    set --universal MATPLOTLIBRC ~/.matplotlibrc
+end
+
 set --universal PIPENV_VENV_IN_PROJECT true
 set --universal PIPENV_DEFAULT_PYTHON_VERSION 3.7
 set --universal PIPENV_IGNORE_VIRTUALENVS 1
