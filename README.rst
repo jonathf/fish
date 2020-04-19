@@ -62,3 +62,10 @@ To install, follow the steps:
        sudo mkdir -p /root/.icons/default /root/.config/gtk-3.0
        sudo cp ~/.icons/default/index.theme /root/.icons/default/
        sudo cp ~/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/
+
+6. (Optional) Install Pyenv and Direnv:
+
+   .. code:: bash
+
+      git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+      aurbuild direnv/direnv-archlinux
