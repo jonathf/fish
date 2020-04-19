@@ -1,4 +1,4 @@
-function _pure_string_width \
+function string_width \
     --description 'returns raw string length, i.e. ignore ANSI-color' \
     --argument-names prompt
 

@@ -1,9 +1,9 @@
-function _pure_prompt_command_duration
+function prompt_command_duration
     set --local command_duration
 
     # Get command execution duration
     if test -n "$CMD_DURATION"
-        set command_duration (_pure_format_time $CMD_DURATION 5)
+        set command_duration (format_time $CMD_DURATION 5)
     end
     set --local command_duration_color (set_color red)
 
@@ -11,7 +11,7 @@ function _pure_prompt_command_duration
 end
 
 
-function _pure_format_time \
+function format_time \
     --description="Format milliseconds to a human readable format" \
     --argument-names milliseconds threshold
 

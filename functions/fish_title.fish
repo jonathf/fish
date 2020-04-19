@@ -3,7 +3,7 @@ function fish_title \
     --argument-names last_command
 
     set --local basename (string replace -r '^.*/' '' -- $PWD)
-    set --local current_folder (_pure_parse_directory)
+    set --local current_folder (parse_directory)
     set --local current_command (status current-command 2>/dev/null; or echo $_)
     set --local title_bar_seperator —
 

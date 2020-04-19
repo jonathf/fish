@@ -1,4 +1,4 @@
-function _pure_prompt_ssh
+function prompt_ssh
     if test "$SSH_CONNECTION" = ""
         return
     end

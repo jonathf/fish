@@ -1,4 +1,4 @@
-function _pure_prompt_git \
+function prompt_git \
     --description 'Print git repository informations: branch name, dirty, upstream ahead/behind'
 
     # only run if inside git folder
