@@ -14,6 +14,5 @@ with neovim.attach('socket', path='$NVIM_LISTEN_ADDRESS') as session:
 	session.command('edit $arg')"
 			end
 		end
-		nvim-terminal-edit $argv;
 	end
 end
