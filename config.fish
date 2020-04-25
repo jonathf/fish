@@ -25,14 +25,13 @@ else
     echo "pyenv is missing; install by running: clone pyenv/pyenv ~/.pyenv"
 end
 
-set direnv_path (command -v direnv)
+set --export DIRENV_LOG_FORMAT ""  # make direnv quite
+set --local direnv_path (command -v direnv)
 if test -n "$direnv_path"
     eval (direnv hook fish)
     if not contains "$PYENV_ROOT/shims" $PATH
         pyenv init - | source
     end
-else
-    echo "direnv is missing; install by running: aurbuild direnv"
 end
 
 # Deactivate the default virtualenv prompt so that we can add our own
