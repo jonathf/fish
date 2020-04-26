@@ -14,12 +14,21 @@ To install, follow the steps:
 
        git clone https://github.com/jonathf/fish ~/.config/fish
 
-1. It is assumed that Fish is installed on the system. On Arch Linux this can
-   be done as follows:
+2. It is assumed that Fish is installed on the system.
+
+   On Arch Linux:
 
    .. code:: bash
 
        sudo pacman --sync --refresh --noconfirm fish
+
+   On Ubuntu Linux:
+
+   .. code:: bash
+
+      sudo apt-add-repository ppa:fish-shell/release-3
+      sudo apt-get update
+      sudo apt-get install fish
 
    If on a system without root access
 
@@ -28,7 +37,13 @@ To install, follow the steps:
        cd ~/.config/fish
        bash fish_install.sh
 
-2. Change the default shell to Fish. In case Fish is installed
+3. Verify that the Fish version is at least version 3.1:
+
+   .. code:: bash
+
+      fish --version
+
+4. Change the default shell to Fish. In case Fish is installed
    globally, this can be done using the command:
 
    .. code:: bash

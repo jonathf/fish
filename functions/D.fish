@@ -4,8 +4,8 @@ function D --description 'alias D exit'
         ~/.config/nvim/venv/bin/python -c "
 import neovim
 with neovim.attach('socket', path='$NVIM_LISTEN_ADDRESS') as session:
-    session('setlocal bufhidden=hide')
-    session('close')"
+    session.command('setlocal bufhidden=hide')
+    session.command('close')"
     end
     exit
 end

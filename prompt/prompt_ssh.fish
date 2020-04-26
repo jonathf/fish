@@ -3,5 +3,5 @@ function prompt_ssh
         return
     end
     set --query --global hostname or set --local hostname (hostname -s) # current host name compatible busybox
-    echo (set_color brblack)(whoami)'@'$hostname
+    echo (set_color brblue)$hostname':'
 end
