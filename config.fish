@@ -1,5 +1,10 @@
 fish_vi_key_bindings
 
+set --export LC_ALL en_US.UTF-8
+set --export LANG en_US.UTF-8
+set --export LANGUAGE en
+set --export LC_MESSAGES C
+
 set --export BROWSER firefox
 set --export EDITOR nvim
 set --export VISUAL nvim

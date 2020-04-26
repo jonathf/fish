@@ -40,11 +40,3 @@ To install, follow the steps:
    .. code:: bash
 
        chsh --shell $HOME/.local/bin/fish
-
-3. (Optional) Install Neovim interface ``pynvim`` into a python (>=3.6.1)
-   virtual environment:
-
-   .. code:: bash
-
-       python -m venv ~/.config/fish/venv
-       ~/.config/fish/venv/bin/pip install --upgrade pip pynvim
