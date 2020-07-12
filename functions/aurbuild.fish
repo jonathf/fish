@@ -3,7 +3,7 @@ function aurbuild --description 'download and install AUR' --wraps 'makepkg'
 	set --local folder (string split "/" "$uri")[-1]
 
 	if not string match -r '/' $uri >/dev/null
-		set uri "https://aur.archlinux.org/$uri.git"
+		set uri "https://aur.archlinux.org/$uri"
 	end
 
 	set folder "/home/$USER/src/$folder"
